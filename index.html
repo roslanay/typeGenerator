@@ -1,0 +1,143 @@
+
+<html>
+<head>
+<title>&quot;ADD&#39;YOUR&#39;COMMENTS&quot;</title>
+<script src='jquery-1.4.2.min.js'></script>
+<script src='jquery-ui-1.8.2.custom.min.js'></script>
+
+
+
+
+
+
+
+<script type='text/javascript'>
+
+
+var str = "Social media works like a mirror. It reflects back to us what we already know. By sheltering ourselves from everything that lies outside our 'likes', we live in a Filter Bubble- a narrow slice of 'reality' where we are isolated from anything that doesn't reify our pre-existing beliefs and flatter our established identity. This Filter Bubble reflects the 'confirmation bias' inherent to human thinking- the tendency to percieve only that which confirms existing beliefs. We stare into the screens and see only our reflection... and then we think this is 'reality'. Big Data is the fingerprint of the mind, the digital trace of our subconscious lives. All of us have a unique mask. Every click, every search, every like, every connection, the time of the day we log on, how long we stay online, where we acces the web, all of it tells those who care to know more about you than any interview with a psychologist could ever tell. It reveals our inner workings, predispositions we aren't even aware of. And therein lies it's power... that that and the fact that most of us don't really care about Big Data.";
+function alterkey(e){
+var t = document.getElementById('ta');
+if(str.length == t.value.length)str+=str;
+t.value=str.substr(0,t.value.length+1);
+return false;
+}
+
+$(function() {
+$("#bg").draggable({handle:"#handle"});
+
+});
+
+
+
+</script>
+
+<style type='text/css'>
+
+
+[draggable=true] {
+    cursor: move;
+}
+
+.resizable {
+    overflow: scroll;
+    resize: both;
+    max-width: 300px;
+    max-height: 460px;
+}
+
+
+#input{
+
+margin-left:-20px;
+margin-top:75px;
+border: none;
+outline: none;
+
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
+
+
+
+#ta{
+
+width:455px;
+height:352px;
+resize: none;
+overflow:hidden;
+
+
+}
+
+#intro{
+	font-family: Helvetica;
+	font-size: 40px;
+	color:WHITE;
+}
+
+
+#handle{
+
+
+width:470px;
+height:20px;
+margin-top: 5px;
+}
+
+
+
+.button{
+  float: right;
+
+}
+
+#repeatTHIS{
+  width:100px;
+  height: 80px;
+}
+</style>
+
+
+</head>
+
+<body style="background-color: #E0E0E0;">
+<h id="intro">ADD YOUR COMMENTS</h>
+<table width="100%" height="100%" valign="left">
+<tr>
+<td>
+<center>
+<div id='input'>
+<textarea id='ta' onkeypress='return alterkey(Event);'></textarea>
+
+
+
+
+<div id="repeatTHIS" style="width:100px height:20px"> 
+   <button class="button" onclick="repeat()">comment</button><br>
+   
+</div>
+  
+<script>
+
+var i = 0;
+var original = document.getElementById('repeatTHIS');
+
+function repeat() {
+  var clone = original.cloneNode(true);
+  clone.id = "repeatTHIS1" + ++i; 
+  original.parentNode.appendChild(clone);
+}
+</script>
+
+
+</center>
+</td>
+</tr>
+</table>
+</body>
+</html>
+
